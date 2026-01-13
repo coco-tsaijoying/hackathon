@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>釣魚網站示範</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", system-ui, sans-serif;
+      background: #0b1020;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 16px 20px;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 32px;
+    }
+
+    header h2 {
+      margin: 0;
+      font-size: 18px;
+      opacity: 0.85;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .grid {
+      width: 100%;
+      max-width: 1000px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.18);
+      cursor: pointer;
+      background: #000;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.68);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .overlay div {
+      max-width: 90%;
+    }
+
+    .overlay h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .overlay p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .grid-item:hover .overlay {
+      opacity: 1;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px 36px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #ffd166;
+      color: #1b1b1b;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>很不幸的恭喜您來到釣魚網站！</h1>
+  <h2>以下是常見的釣魚訊息種類</h2>
+</header>
+
+<main>
+  <div class="grid">
+
+    <div class="grid-item">
+      <img src="S__298303491_0.jpg" alt="感情詐騙">
+      <div class="overlay">
+        <div>
+          <h3>❤️ 感情詐騙</h3>
+          <p>假交友、假戀愛<br>建立信任後要求金錢或投資</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <img src="S__298303492_0.jpg" alt="投資理財詐騙">
+      <div class="overlay">
+        <div>
+          <h3>📈 投資理財詐騙</h3>
+          <p>保證高獲利、穩賺不賠<br>實際是誘騙入金</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <img src="S__298303493_0.jpg" alt="旅遊詐騙">
+      <div class="overlay">
+        <div>
+          <h3>✈️ 旅遊詐騙</h3>
+          <p>低價機票、假訂房<br>付款後聯絡不上</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <img src="S__298303494_0.jpg" alt="占卜開運詐騙">
+      <div class="overlay">
+        <div>
+          <h3>🔮 占卜／開運詐騙</h3>
+          <p>恐嚇改運、消災解厄<br>一步步要求付費</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <img src="S__298303495_0.jpg" alt="節日詐騙">
+      <div class="overlay">
+        <div>
+          <h3>🎄 節日類詐騙</h3>
+          <p>假優惠、假贈禮<br>利用節慶降低戒心</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <img src="S__298303496_0.jpg" alt="大型活動詐騙">
+      <div class="overlay">
+        <div>
+          <h3>🎫 大型活動詐騙</h3>
+          <p>假門票、假 QR code<br>付款後無法入場</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <button onclick="window.open('https://165.npa.gov.tw/#/','_blank')">
+    尋找165反詐騙協助
+  </button>
+</footer>
+
+</body>
+</html>
